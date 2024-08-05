@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de validez de comprobante de pago</title>
+    <script src="validarComprobante.js"></script> 
+</head>
+<body>
+    <div>
+        <label> 
+            client_id
+            <input type="text" name="client_id" />
+        </label>
+        <label> 
+            client_secret
+            <input type="text" name="client_secret" />
+        </label>
+    </div>
+    <div>
+        <label> 
+            RUC
+            <input type="text" name="numRuc"/>
+        </label>
+        <label> 
+            Tipo de comprobante
+            <input type="text" name="codComp"/>
+        </label>
+        <label> 
+            Número de serie
+            <input type="text" name="numeroSerie"/>
+        </label>
+        <label> 
+            Número
+            <input type="text" name="numero"/>
+        </label>
+        <label> 
+            Fecha de emision
+            <input type="date" name="fechaEmision"/>
+        </label>
+        <label> 
+            Monto
+            <input type="text" name="monto" />
+        </label>
+    </div>
+    <div>
+        <button onclick="validarComprobanteSUNAT()">
+            Comprobar
+        </button>
+    </div>
+    <div>
+        <textarea id="response">
+
+        </textarea>
+    </div>
+</body>
+</html>
