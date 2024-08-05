@@ -1,7 +1,6 @@
 function validarComprobanteSUNAT(){
     const xhr = new XMLHttpRequest();
-    xhr.open("POST", concat(
-        "https://api-seguridad.sunat.gob.pe/v1/clientesextranet/",
+    xhr.open("POST", "https://api-seguridad.sunat.gob.pe/v1/clientesextranet/".concat(
         document.getElementById("client_id").innerText,
         "/oauth2/token/"
     ));
@@ -36,7 +35,7 @@ function validarComprobanteSUNAT(){
         fechaEmision: "03/08/2024",
         monto: "9.90"
       });
-      xhr2.setRequestHeader("Authorization", concat("Bearer ",token));
+      xhr2.setRequestHeader("Authorization", "Bearer ".concat(token));
       xhr2.send(body);
       xhr2.onload = () => {
         if (xhr2.readyState == 4 && xhr2.status == 201) {
