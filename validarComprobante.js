@@ -1,4 +1,4 @@
-function validarComprobanteSUNAT8(){
+function validarComprobanteSUNAT(){
     const xhr = new XMLHttpRequest();
     xhr.open("POST", concat(
         "https://api-seguridad.sunat.gob.pe/v1/clientesextranet/",
@@ -17,8 +17,9 @@ function validarComprobanteSUNAT8(){
       xhr.onload = () => {
         if (xhr.readyState == 4 && xhr.status == 201) {
           token = JSON.parse(xhr.responseText).access_token;
+          alert(token)
         } else {
-          console.log(`Error: ${xhr.status}`);
+          alert("Error")
         }
       };
       
